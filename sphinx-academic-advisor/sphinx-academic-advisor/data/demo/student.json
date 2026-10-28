@@ -1,0 +1,19 @@
+{
+  "students": [
+    {
+      "student_id": "DEMO-0001",
+      "name": "Demo Student",
+      "program": "Demonstration Program (not a real program)",
+      "admission_term": "Demo Term 1",
+      "records": [
+        {"course_code": "DEMO-101", "grade": "B",  "term": "Demo Term 1", "term_order": 1},
+        {"course_code": "DEMO-103", "grade": "A",  "term": "Demo Term 1", "term_order": 1},
+        {"course_code": "DEMO-102", "grade": "B+", "term": "Demo Term 2", "term_order": 2},
+        {"course_code": "DEMO-104", "grade": "C",  "term": "Demo Term 2", "term_order": 2},
+        {"course_code": "DEMO-201", "grade": "B",  "term": "Demo Term 3", "term_order": 3},
+        {"course_code": "DEMO-203", "grade": "F",  "term": "Demo Term 3", "term_order": 3},
+        {"course_code": "DEMO-E01", "grade": "A-", "term": "Demo Term 3", "term_order": 3}
+      ]
+    }
+  ]
+}

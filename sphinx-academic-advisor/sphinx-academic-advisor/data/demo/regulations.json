@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "is_demo": true,
+    "label": "DEMONSTRATION RULES - written by the team for testing, NOT the official Sphinx University regulations.",
+    "note": "A value of null means 'the rule has not been provided'. The agent will then answer 'needs verification' instead of guessing."
+  },
+  "grade_scale": {
+    "A": 4.0, "A-": 3.7,
+    "B+": 3.3, "B": 3.0, "B-": 2.7,
+    "C+": 2.3, "C": 2.0, "C-": 1.7,
+    "D+": 1.3, "D": 1.0,
+    "F": 0.0
+  },
+  "min_passing_points": 1.0,
+  "retake_policy": null,
+  "max_credits_per_semester": null,
+  "min_cgpa_good_standing": null,
+  "graduation": {
+    "total_credits": 43,
+    "required_categories": ["core"],
+    "category_credits": {"elective": 9}
+  }
+}

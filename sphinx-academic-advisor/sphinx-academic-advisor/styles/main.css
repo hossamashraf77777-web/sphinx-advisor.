@@ -1,0 +1,354 @@
+/* ==========================================================================
+   Sphinx FCAI Academic Advisor - main stylesheet
+   --------------------------------------------------------------------------
+   1. Design tokens  (EDIT HERE: colours, fonts, spacing, radii, shadows)
+   2. Page + typography
+   3. Sidebar
+   4. Buttons
+   5. Inputs, tabs, forms
+   6. Metrics, tables, expanders
+   7. Our own components (.sx-*)
+   8. Small screens
+   Tip: only section 1 needs to change to re-colour the whole app.
+   ========================================================================== */
+
+/* 1. DESIGN TOKENS ------------------------------------------------------- */
+:root {
+  /* Colours */
+  --primary-color: #14284b;        /* deep navy: headings, primary buttons */
+  --primary-hover-color: #0d1c37;
+  --secondary-color: #0f766e;      /* teal: links, focus, charts, highlights */
+  --secondary-hover-color: #0b5f59;
+  --accent-color: #d9f0ec;         /* light teal tint: soft backgrounds */
+  --background-color: #f3f5f8;     /* page background (soft gray) */
+  --surface-color: #ffffff;        /* cards, sidebar, tables */
+  --text-color: #1b2433;
+  --muted-text-color: #5b677a;
+  --border-color: #dde2ea;
+
+  /* Status colours: strong colour for text, "soft" colour for backgrounds */
+  --success-color: #1e7f4f;
+  --success-soft-color: #e3f4ea;
+  --warning-color: #8a5a00;
+  --warning-soft-color: #fff4db;
+  --danger-color: #b3261e;
+  --danger-soft-color: #fbe7e5;
+
+  /* Typography (system fonts: works offline in the demo room) */
+  --font-family: "Segoe UI", system-ui, -apple-system, "Noto Sans", "Noto Naskh Arabic", Arial, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-small: 0.875rem;
+  --font-weight-medium: 500;
+  --font-weight-bold: 650;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  /* Shape + depth */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --shadow-sm: 0 1px 2px rgba(20, 40, 75, 0.06);
+  --shadow-md: 0 4px 12px rgba(20, 40, 75, 0.10);
+  --transition: 150ms ease;
+
+  /* Layout */
+  --content-max-width: 1180px;
+}
+
+/* 2. PAGE + TYPOGRAPHY --------------------------------------------------- */
+.stApp {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+}
+
+[data-testid="stHeader"] {
+  background: transparent;
+}
+
+.stApp .block-container {
+  max-width: var(--content-max-width);
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-6);
+}
+
+.stApp h1,
+.stApp h2,
+.stApp h3 {
+  color: var(--primary-color);
+  font-family: var(--font-family);
+  letter-spacing: -0.01em;
+}
+
+.stApp h2 {
+  font-size: 1.35rem;
+  margin-top: var(--space-5);
+}
+
+.stApp a {
+  color: var(--secondary-color);
+}
+
+.stApp a:hover {
+  color: var(--secondary-hover-color);
+}
+
+/* 3. SIDEBAR ------------------------------------------------------------- */
+[data-testid="stSidebar"] {
+  background-color: var(--surface-color);
+  border-right: 1px solid var(--border-color);
+}
+
+[data-testid="stSidebar"] a {
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition);
+}
+
+[data-testid="stSidebar"] a:hover {
+  background-color: var(--accent-color);
+}
+
+/* 4. BUTTONS ------------------------------------------------------------- */
+.stApp .stButton > button,
+.stApp .stDownloadButton > button,
+.stApp [data-testid="stFormSubmitButton"] > button {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  color: var(--primary-color);
+  font-weight: var(--font-weight-medium);
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.stApp .stButton > button:hover,
+.stApp .stDownloadButton > button:hover,
+.stApp [data-testid="stFormSubmitButton"] > button:hover {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  box-shadow: var(--shadow-md);
+}
+
+.stApp .stButton > button[kind="primary"],
+.stApp [data-testid="stFormSubmitButton"] > button[kind="primaryFormSubmit"] {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.stApp .stButton > button[kind="primary"]:hover,
+.stApp [data-testid="stFormSubmitButton"] > button[kind="primaryFormSubmit"]:hover {
+  background-color: var(--primary-hover-color);
+  color: #ffffff;
+}
+
+/* 5. INPUTS, TABS, FORMS ------------------------------------------------- */
+.stApp [data-baseweb="input"],
+.stApp [data-baseweb="select"] > div,
+.stApp [data-baseweb="textarea"] {
+  border-radius: var(--radius-sm);
+}
+
+.stApp [data-testid="stForm"] {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.stApp [data-baseweb="tab-list"] {
+  gap: var(--space-2);
+}
+
+.stApp [data-baseweb="tab"] {
+  font-weight: var(--font-weight-medium);
+}
+
+/* Bordered containers (st.container(border=True)) become cards */
+.stApp [data-testid="stVerticalBlockBorderWrapper"] {
+  border-radius: var(--radius-md);
+}
+
+/* 6. METRICS, TABLES, EXPANDERS ----------------------------------------- */
+.stApp [data-testid="stMetric"] {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4);
+}
+
+.stApp [data-testid="stMetricLabel"] {
+  color: var(--muted-text-color);
+  font-size: var(--font-size-small);
+}
+
+.stApp [data-testid="stMetricValue"] {
+  color: var(--primary-color);
+  font-weight: var(--font-weight-bold);
+}
+
+.stApp [data-testid="stDataFrame"] {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.stApp [data-testid="stExpander"] {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+/* 7. OUR OWN COMPONENTS (.sx-*) ----------------------------------------- */
+
+/* Page header: small eyebrow line, title, one-line description */
+.sx-page-header {
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+}
+
+.sx-page-header h1 {
+  margin: var(--space-1) 0;
+  padding: 0;
+  font-size: 1.9rem;
+  line-height: 1.2;
+}
+
+.sx-eyebrow {
+  margin: 0;
+  color: var(--secondary-color);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sx-subtitle {
+  margin: 0;
+  color: var(--muted-text-color);
+}
+
+/* Notices: demo warning, alerts, info. Variants: --warning --danger --info --success */
+.sx-notice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: var(--space-3) 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-color);
+  border-left-width: 4px;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-color);
+}
+
+.sx-notice strong {
+  color: var(--text-color);
+}
+
+.sx-notice span {
+  color: var(--muted-text-color);
+}
+
+.sx-notice--warning { background-color: var(--warning-soft-color); border-left-color: var(--warning-color); }
+.sx-notice--warning strong { color: var(--warning-color); }
+.sx-notice--danger  { background-color: var(--danger-soft-color);  border-left-color: var(--danger-color); }
+.sx-notice--danger strong { color: var(--danger-color); }
+.sx-notice--success { background-color: var(--success-soft-color); border-left-color: var(--success-color); }
+.sx-notice--success strong { color: var(--success-color); }
+.sx-notice--info    { background-color: var(--accent-color);       border-left-color: var(--secondary-color); }
+.sx-notice--info strong { color: var(--secondary-hover-color); }
+
+/* Status badges */
+.sx-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  background-color: var(--background-color);
+  color: var(--muted-text-color);
+  border: 1px solid var(--border-color);
+}
+
+.sx-badge--success { background-color: var(--success-soft-color); color: var(--success-color); border-color: transparent; }
+.sx-badge--warning { background-color: var(--warning-soft-color); color: var(--warning-color); border-color: transparent; }
+.sx-badge--danger  { background-color: var(--danger-soft-color);  color: var(--danger-color);  border-color: transparent; }
+.sx-badge--info    { background-color: var(--accent-color);       color: var(--secondary-hover-color); border-color: transparent; }
+
+/* One agent decision: rule name + badge on top, explanation below */
+.sx-decision {
+  margin: var(--space-2) 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-color);
+  border-left-width: 4px;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.sx-decision--success { border-left-color: var(--success-color); }
+.sx-decision--warning { border-left-color: var(--warning-color); }
+.sx-decision--danger  { border-left-color: var(--danger-color); }
+
+.sx-decision__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-color);
+}
+
+.sx-decision p {
+  margin: var(--space-2) 0 0;
+  color: var(--text-color);
+}
+
+/* Empty state: shown when a list has nothing to display */
+.sx-empty {
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--surface-color);
+}
+
+.sx-empty strong { color: var(--primary-color); }
+.sx-empty p { margin: var(--space-1) 0 0; color: var(--muted-text-color); }
+
+/* Key/value rows used in profile + course detail */
+.sx-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3) var(--space-5);
+  margin: var(--space-2) 0;
+}
+
+.sx-fact__label { color: var(--muted-text-color); font-size: var(--font-size-small); }
+.sx-fact__value { color: var(--text-color); font-weight: var(--font-weight-medium); }
+
+/* 8. SMALL SCREENS ------------------------------------------------------- */
+@media (max-width: 768px) {
+  .stApp .block-container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  .sx-page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .sx-decision__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

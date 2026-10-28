@@ -1,0 +1,17 @@
+code,title,credits,category,level,prerequisites,description
+DEMO-101,Demo Foundations I,3,core,1,,Placeholder course for testing. Not a real university course.
+DEMO-102,Demo Foundations II,3,core,1,DEMO-101,Placeholder course for testing. Not a real university course.
+DEMO-103,Demo Skills A,2,core,1,,Placeholder course for testing. Not a real university course.
+DEMO-104,Demo Skills B,2,core,1,DEMO-103,Placeholder course for testing. Not a real university course.
+DEMO-201,Demo Methods I,3,core,2,DEMO-102,Placeholder course for testing. Not a real university course.
+DEMO-202,Demo Methods II,3,core,2,DEMO-201,Placeholder course for testing. Not a real university course.
+DEMO-203,Demo Systems I,3,core,2,DEMO-102;DEMO-104,Placeholder course for testing. Not a real university course.
+DEMO-204,Demo Systems II,3,core,2,DEMO-203,Placeholder course for testing. Not a real university course.
+DEMO-301,Demo Advanced Topics I,3,core,3,DEMO-202;DEMO-204,Placeholder course for testing. Not a real university course.
+DEMO-302,Demo Advanced Topics II,3,core,3,DEMO-301,Placeholder course for testing. Not a real university course.
+DEMO-303,Demo Project Planning,2,core,3,DEMO-201,Placeholder course for testing. Not a real university course.
+DEMO-401,Demo Capstone,4,core,4,DEMO-302;DEMO-303,Placeholder course for testing. Not a real university course.
+DEMO-E01,Demo Elective A,3,elective,2,,Placeholder elective for testing. Not a real university course.
+DEMO-E02,Demo Elective B,3,elective,2,DEMO-101,Placeholder elective for testing. Not a real university course.
+DEMO-E03,Demo Elective C,3,elective,3,DEMO-201,Placeholder elective for testing. Not a real university course.
+DEMO-E04,Demo Elective D,3,elective,3,UNKNOWN,Placeholder elective whose prerequisites are deliberately marked UNKNOWN to show how the agent reacts to missing data.
